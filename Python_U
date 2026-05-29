@@ -1,0 +1,27 @@
+def Adivinum():
+    print("==================================================")
+    print("***********************************")
+    print("  Bienvenido a adivina adivinador  ")
+    print("***********************************")
+    print(" En este juego intentare adivinar en el numero que estas pensando ")
+    print("Solo podras responder con:")
+    print(" - D - Si el número de la máquina es muy alto")
+    print(" - U - Si el número de la máquina es muy bajo")
+    print(" - C - Si el número es correcto")
+    print("==================================================")
+    limite_inf = 1
+    limite_sup = 10
+    while True:
+        numero_maquina = (limite_inf + limite_sup) // 2
+        print(f"¿Estás pensando en el número {numero_maquina}?")
+        respuesta = input("Respuesta (D/U/C): ")
+        if respuesta == "D":
+            limite_sup = numero_maquina - 1 
+        elif respuesta == "U":
+            limite_inf = numero_maquina + 1 
+        elif respuesta == "C":
+            print("¡Lo Adivine! Gracias por jugar <:")
+            break 
+        else:
+            ("Ingrese un Numero del 1 al 10!!")
+Adivinum()
