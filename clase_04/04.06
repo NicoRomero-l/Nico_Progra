@@ -1,0 +1,13 @@
+num = int(input("Ingrese un numero entero: "))
+if num % 2 == 0:
+    print("El numero es par.")
+else:
+   print("El Numero es impar")
+if num % 3 == 0 and num % 5 == 0:
+    print("El numero es Multimplo de 3 y de 5.")
+elif num % 3 == 0:
+    print("El numero es Multimplo de 3.")
+elif num % 5 == 0:
+    print("El numero es Multiplo de 5.")
+else:
+    print("El numero no es multiplo ni de 3 ni de 5")
