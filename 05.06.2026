@@ -1,0 +1,61 @@
+#contador de votos para mejor cantante urbano 
+vot_DaddY = 0
+vot_Planb = 0
+vot_DonO = 0
+vot_WyY = 0
+print("")
+print("")
+print("----------------------------------------------------------------")
+votos = int(input("Ingrese las personas que van a votar(solo numero): "))
+print("----------------------------------------------------------------")
+print("")
+for i in range(votos):
+    print("")
+    print("1. Daddy Yankee ")
+    print("2. PlanB ")
+    print("3. Don Omar ")
+    print("4. Wisin y Yandel")
+    print("")
+    voto = int(input("Registra tu voto, recuerda que puedes votar a 1 Cantante(hazlo en manera numerica): "))
+    if voto == 1:
+        vot_DaddY = vot_DaddY +1 
+        print("")
+        print("Se regitro tu voto con exito.")
+    elif voto == 2:
+        vot_Planb = vot_Planb +1
+        print("")
+        print("Se regitro tu voto con exito.")
+    elif voto == 3:
+        vot_DonO = vot_DonO +1
+        print("")
+        print("Se regitro tu voto con exito.")
+    elif voto == 4:
+        vot_WyY = vot_WyY +1
+        print("")
+        print("Se regitro tu voto con exito.")
+    else: 
+        print("")
+        print("***********************************************")
+        print("Voto invalido!!, recuerde solo ingresar numeros")
+        print("***********************************************")
+        print("")
+
+print("((((((Desicion final)))))))")
+print("Votos de Daddy Yankee: ", vot_DaddY, " Votos.")
+print("Votos de Plan B: ", vot_Planb, " Votos.")
+print("Votos de Don Omar: ", vot_DonO, " Votos.")
+print("Votos de Wisin y Yandel: ", vot_WyY, " Votos.")
+print("")
+print("----------------------------------------------------------------")
+print("                        EL GANADOR ES                           ")
+print("----------------------------------------------------------------")
+if vot_DaddY > 0 and vot_DaddY >= vot_Planb and vot_DaddY >= vot_DonO and vot_DaddY >= vot_WyY:
+    print("Daddy Yankee se lleva la corona con ", vot_DaddY, " votos!")
+elif vot_Planb > 0 and vot_Planb >= vot_DaddY and vot_Planb >= vot_DonO and vot_Planb >= vot_WyY:
+    print("Plan B se lleva la corona con ", vot_Planb, " votos!")
+elif vot_DonO > 0 and vot_DonO >= vot_DaddY and vot_DonO >= vot_Planb and vot_DonO >= vot_WyY:
+    print("Don Omar se lleva la corona con ", vot_DonO, " votos!")
+elif vot_WyY > 0 and vot_WyY >= vot_DaddY and vot_WyY >= vot_Planb and vot_WyY >= vot_DonO:
+    print("Wisin y Yandel se llevan la corona con ", vot_WyY, " votos!")
+else:
+    print("Cantidad de votos invalida o insuficiente para poder hacer la comparacion.")
