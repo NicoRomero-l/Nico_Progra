@@ -1,0 +1,31 @@
+
+saldo_inicial = 1000
+contraseña = 1015
+nombre = input("INGRESE SU NOMBRE COMPLETO: ")
+entrada = input("INGRESE LA CONTRASEÑA PARA ENTRAR EN LA CUENTA: ")
+if entrada != contraseña:
+    print("BIENVENIDO ", nombre)
+    print("")
+    val = input("Desea consultar los valores de su cuenta?[y] o [n] -> ").lower
+    if val == "s":
+        print(saldo_inicial)
+    else:
+        print("Se continuara con la transaccion.")
+    transaccion = input("INGRESE EL TIPO DE TRANSACCION A REALIZAR: DEPOSITAR [D] RETIRAR[R]: ").lower 
+    if transaccion == "d":
+        print ("Ingresando...")
+        ingreso = input(float("INGRESE EL MONTO A DEPOSITAR: -> "))
+        saldo_tot1 = saldo_inicial + ingreso
+        print("Se ha añadido a tu cuenta el valor, tu saldo actual es ", saldo_tot1)
+    elif transaccion == "r":
+        print("Ingresando...")
+        retiro = input(float("INGRESE EL MONTO A RETIRAR: -> "))
+        saldo_tot2 = saldo_inicial - retiro
+        print("Se ha restado a tu cuenta el valor, tu saldo actual es ", saldo_tot2)
+    else:
+         print("NO VALIDO, SOLO INGRESE LAS LETRAS D O R")
+elif entrada >= 2:
+    print("SIN INTENTOS, CUNETA SUSPENDIDA.")
+    break 
+else:
+    print("CONTRASEÑA INCORRECTA, INTENTALO DE NUEVO.")
