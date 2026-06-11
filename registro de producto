@@ -1,0 +1,22 @@
+acum_productos=""
+print("------------------------------------------------------------")
+print("                REGISTRO DE PRODUCTOS")
+print("------------------------------------------------------------")
+while True:
+    registro=input("Desea registrar productos? [registrar] o [salir]: ").lower()
+    if registro=="registrar":
+        producto=input("Ingrese el producto a registrar: ").lower()
+        acum_productos+=producto
+        print("")
+        cantidad=int(input("Ingrese el numero de productos(solo numeros): "))
+        print(cantidad,"",producto,"han sido añadidos con exito. ")
+        print("")
+        print("------------------------------------------------------------")
+    elif registro == "salir":
+        print("Gracias por ingresar.")
+        break
+    else:
+        print("Ingrese una opcion valida...")
+
+print("-----------------------------------------------------------")
+print("PRODUCTOS VENDIDOS: ",acum_productos)
