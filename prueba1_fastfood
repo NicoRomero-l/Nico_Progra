@@ -1,0 +1,63 @@
+print("**********************************************************")
+print(" BIENVENIDO A FASTFOOD")
+print("**********************************************************")
+nombre=input("Ingrese su nombre -> ")
+print("")
+print(f"BIENVENIDO {nombre}, ES UN GUSTO ATENDERTE.")
+print("")
+print("////////////////////////////////////")
+print(" MENU")
+print("////////////////////////////////////")
+print("[1] Hamburguesa................... $3.50")
+print("[2] Salchipapa.................... $2.50")
+print("[3] Gaseosa....................... $1.00")
+print("////////////////////////////////////")
+print(" ELIJA SOLO NUMEROS.")
+print("////////////////////////////////////")
+print("")
+pedido=int(input("Ingrese su pedido -> "))
+hamburguesa=3.50
+salchipapa=2.50
+gaseosa=1.00
+descuento=0.15
+if pedido==1:
+producto="Hamburguesa"
+precio=hamburguesa
+elif pedido==2:
+producto="Salchipapa"
+precio=salchipapa
+elif pedido==3:
+producto="Gaseosa"
+precio=gaseosa
+else:
+print("Elija una respuesta correcta.")
+while True:
+num_ped=int(input("Cuantas unidades desea adquirir? -> "))
+if num_ped<=0:
+print("Ingrese nuevamente el numero.")
+else:
+if num_ped>=14:
+respuesta=input(f"Desea llevar >{num_ped}< unidades? [s][n] -> ").lower()
+if respuesta=="n":
+print("No se ha añadido nada.")
+exit()
+print("Agregado correctamente.")
+break
+subtotal=precio*num_ped
+if num_ped>=14:
+descuento_aplicado=subtotal*descuento
+else:
+descuento_aplicado=0
+total=subtotal-descuento_aplicado
+print("////////////////////////////////////////////////////////////")
+print(" TOTAL")
+print("////////////////////////////////////////////////////////////")
+print("")
+print("Nombre ->",nombre)
+print("Producto ->",producto)
+print("Cantidad ->",num_ped)
+print("Total sin descuentos ->",subtotal,2)
+print("Total con descuentos aplicados ->",descuento_aplicado, 2)
+print("Final a pagar ->", total, 2)
+print("")
+print("////////////////////////////////////////////////////////////")
