@@ -1,0 +1,24 @@
+alumnos = ["Luis", "Manuel", "Alicia", "Miguel", "Nora"]
+
+for nombre in alumnos:
+    print(nombre)
+
+alumno = input("Seleccione un nombre de la lista: ")
+
+def notas_alumnos():
+    nota1 = float(input("Ingrese la nota 1: "))
+    nota2 = float(input("Ingrese la nota 2: "))
+    nota3 = float(input("Ingrese la nota 3: "))
+
+    promedio =(nota1 + nota2 + nota3)/3
+
+    if promedio >= 7:
+        estado = "aprobó"
+    else:
+        estado = "reprobó"
+
+    return promedio, estado
+
+promedio, estado = notas_alumnos()
+
+print(f"El alumno {alumno} obtuvo un promedio de {promedio} y {estado}.")
