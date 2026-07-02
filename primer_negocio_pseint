@@ -1,0 +1,216 @@
+Algoritmo interfaz_de_emprendimiento
+definir factura, iva, total Como Real
+definir cedula, cantidad Como Entero
+definir nombre, pedido, respuesta, correo Como Caracter
+Definir menu, opc, opci, opcio, elec Como entero
+factura = 0
+pedido = ""
+Escribir "========================================"
+Escribir " ** CREATIVE **"
+Escribir " Bienvenido a nuestra tienda"
+Escribir "========================================"
+Escribir ""
+Escribir ">> INGRESA TU NOMBRE : "
+leer nombre
+Escribir ">> INGRESA TU CEDULA : "
+leer cedula
+Escribir ">> INGRESA TU CORREO : "
+leer correo
+Escribir "========================================"
+Escribir ""
+Escribir "-> BIENVENIDO/A, ", nombre, ". Es un gusto tenerte aqui!"
+Escribir " XX-RECUERDA QUE SOLO PUEDES USAR NUMEROS-XX "
+Escribir " XX-NO USES LETRAS NI CARACTERES ESPECIALES-XX "
+esperar 2 Segundos
+repetir
+Escribir ""
+Escribir "========================================"
+Escribir " -- MENU PRINCIPAL --"
+Escribir "========================================"
+Escribir " [1] Ver catalogo"
+Escribir " [2] Salir y generar factura"
+Escribir "========================================"
+Escribir ""
+leer elec
+si elec = 1 Entonces
+Escribir ""
+Escribir "========================================"
+Escribir " -- CATALOGO GENERAL --"
+Escribir "========================================"
+Escribir " [1] Jarros"
+Escribir " [2] Ropa"
+Escribir " [3] Articulos"
+Escribir " [4] Salir"
+Escribir "========================================"
+Escribir ""
+leer opc
+Segun opc Hacer
+1:
+
+Escribir ""
+Escribir "========================================"
+Escribir " -- JARROS --"
+Escribir "========================================"
+Escribir " [1] Jarro de Ceramica ........ $4.50"
+Escribir " [2] Jarro de vidrio .......... $6.00"
+Escribir " [3] Tomatodo ................. $8.00"
+Escribir " [4] Vasos .................... $3.00"
+Escribir " [5] Shots .................... $1.50"
+Escribir "========================================"
+Escribir ""
+Leer opcio
+Segun opcio Hacer
+1:
+Escribir ">> Cuantos deseas? : "
+Leer cantidad
+factura = factura + (4.50 * cantidad)
+pedido = pedido + " Jarro de Ceramica (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+2:
+Escribir ">> Cuantos deseas? : "
+Leer cantidad
+factura = factura + (6.00 * cantidad)
+pedido = pedido + " Jarro de vidrio (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+3:
+Escribir ">> Cuantos deseas? : "
+Leer cantidad
+factura = factura + (8.00 * cantidad)
+pedido = pedido + " Tomatodo (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+4:
+Escribir ">> Cuantos deseas? : "
+Leer cantidad
+factura = factura + (3.00 * cantidad)
+pedido = pedido + " Vasos (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+5:
+Escribir ">> Cuantos deseas? : "
+Leer cantidad
+factura = factura + (1.50 * cantidad)
+pedido = pedido + " Shots (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+FinSegun
+2:
+Escribir ""
+Escribir "========================================"
+Escribir " -- ROPA --"
+Escribir "========================================"
+Escribir " [1] Camiseta hombre .......... $5.00"
+Escribir " [2] Camiseta mujer ........... $5.00"
+Escribir " [3] Hoodies .................. $7.00"
+Escribir " [4] Gorras ................... $5.00"
+Escribir " [5] Medias ................... $3.50"
+Escribir "========================================"
+
+Escribir ""
+leer opci
+segun opci Hacer
+1:
+factura = factura + (5.00 * cantidad)
+pedido = pedido + "Camiseta hombre (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+2:
+factura = factura + 5.00
+pedido = pedido + "Camiseta mujer (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+3:
+factura = factura + 7.00
+pedido = pedido + "Hoodies (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+4:
+factura = factura + 5.00
+pedido = pedido + "Gorras (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+5:
+factura = factura + 3.50
+pedido = pedido + "Medias (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+FinSegun
+3:
+Escribir ""
+Escribir "========================================"
+Escribir " -- ARTICULOS --"
+Escribir "========================================"
+Escribir " [1] Llaveros ................. $3.00"
+Escribir " [2] Esferos .................. $1.00"
+Escribir " [3] Libretas/Libretines ...... $1.75"
+Escribir " [4] Cases/Forros ............. $2.50"
+Escribir " [5] Mousepads ................ $3.00"
+Escribir "========================================"
+Escribir ""
+leer op
+segun op Hacer
+1:
+factura = factura + 3.00
+pedido = pedido + "Llaveros (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+2:
+factura = factura + 1.00
+pedido = pedido + "Esferos (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+3:
+factura = factura + 1.75
+pedido = pedido + "Libretas/Libretines"
+Escribir ""
+Escribir "-> Agregado: ", pedido
+4:
+factura = factura + 2.50
+
+pedido = pedido + "Cases/Forros (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+5:
+factura = factura + 3.00
+pedido = pedido + "Mousepads (" + ConvertirATexto(cantidad) + ") "
+Escribir ""
+Escribir "-> Agregado: ", pedido
+FinSegun
+FinSegun
+sino
+elec = 2
+Escribir ""
+Escribir "-> Muchas gracias por visitarnos!"
+FinSi
+Hasta Que elec = 2
+Escribir ""
+si factura > 0 Entonces
+Escribir "----------------------------------------"
+Escribir " (s) Si quiero factura (n) No gracias"
+Escribir "----------------------------------------"
+leer respuesta
+si respuesta = s Entonces
+FinSi
+Escribir ""
+Escribir "========================================"
+Escribir " -- FACTURA FINAL --"
+Escribir "========================================"
+Escribir " Cliente : ", nombre
+Escribir " Cedula : ", cedula
+Escribir " Correo : ", correo
+Escribir "----------------------------------------"
+Escribir " Pedido : ", pedido
+Escribir "----------------------------------------"
+Escribir " Subtotal : $", factura
+iva = factura * 0.15
+total = iva + factura
+Escribir " IVA 15% : $", iva
+Escribir "----------------------------------------"
+Escribir " ** TOTAL : $", total, " **"
+Escribir "========================================"
+Escribir ""
+Escribir "-> Gracias por tu compra, ", nombre, "! Vuelve pronto :)"
+FinSi
+FinAlgoritmo
