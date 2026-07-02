@@ -1,0 +1,138 @@
+def saludo_y_datos_cliente():
+    print("**************************************")
+    print("          * * CREATIVE * *")
+    print("     BIENVENIDOS A NUESTRA TIENDA")
+    print("   SIEMPRE ES UN GUSTO TENERTE AQUI.")
+    print("**************************************")
+    print("")
+    nombre=input("> Por favor ingrese su nombre: ")
+    print("")
+    cedula=int(input("> Ingrese el numero de cedula: "))
+    print("")
+    correo=input("> Ingrese un correo: ")
+    print("")
+    return nombre,cedula,correo
+
+def agregar_producto_a_factura(nombre_producto,precio,pedido,factura):
+    cantidad=int(input(">> Cuantos deseas?: "))
+    factura= factura+precio*cantidad
+    pedido= pedido+nombre_producto, " Cantidad: ", cantidad 
+    print("Agregado:", nombre_producto)
+    print("")
+    return factura,pedido
+
+def mostrar_menu_jarros(pedido,factura):
+    salir=False
+    while not salir:
+        print("1. Ceramica 4.5")
+        print("2. Vidrio 6")
+        print("3. Tomatodo 8")
+        print("4. Vasos 3")
+        print("5. Shots 1.5")
+        print("6. Volver a menu principal")
+        op=int(input("Opcion: "))
+        if op==1:
+            factura,pedido=agregar_producto_a_factura("Jarro Ceramica",4.5,pedido,factura)
+        elif op==2:
+            factura,pedido=agregar_producto_a_factura("Jarro Vidrio",6,pedido,factura)
+        elif op==3:
+            factura,pedido=agregar_producto_a_factura("Tomatodo",8,pedido,factura)
+        elif op==4:
+            factura,pedido=agregar_producto_a_factura("Vasos",3,pedido,factura)
+        elif op==5:
+            factura,pedido=agregar_producto_a_factura("Shots",1.5,pedido,factura)
+        elif op==6:
+            salir=True
+    return factura,pedido
+
+def mostrar_menu_ropa(pedido,factura):
+    salir=False
+    while not salir:
+        print("1. Camiseta hombre")
+        print("2. Camiseta mujer")
+        print("3. Hoodies")
+        print("4. Gorras")
+        print("5. Medias")
+        print("6. Volver")
+        op=int(input("Opcion: "))
+        if op==1:
+            factura,pedido=agregar_producto_a_factura("Camiseta hombre",5,pedido,factura)
+        elif op==2:
+            factura,pedido=agregar_producto_a_factura("Camiseta mujer",5,pedido,factura)
+        elif op==3:
+            factura,pedido=agregar_producto_a_factura("Hoodies",7,pedido,factura)
+        elif op==4:
+            factura,pedido=agregar_producto_a_factura("Gorras",5,pedido,factura)
+        elif op==5:
+            factura,pedido=agregar_producto_a_factura("Medias",3.5,pedido,factura)
+        elif op==6:
+            salir=True
+    return factura,pedido
+
+def mostrar_menu_articulos(pedido,factura):
+    salir=False
+    while not salir:
+        print("1. Llaveros")
+        print("2. Esferos")
+        print("3. Libretas")
+        print("4. Cases")
+        print("5. Mousepads")
+        print("6. Volver")
+        op=int(input("Opcion: "))
+        if op==1:
+            factura,pedido=agregar_producto_a_factura("Llaveros",3,pedido,factura)
+        elif op==2:
+            factura,pedido=agregar_producto_a_factura("Esferos",1,pedido,factura)
+        elif op==3:
+            factura,pedido=agregar_producto_a_factura("Libretas",1.75,pedido,factura)
+        elif op==4:
+            factura,pedido=agregar_producto_a_factura("Cases",2.5,pedido,factura)
+        elif op==5:
+            factura,pedido=agregar_producto_a_factura("Mousepads",3,pedido,factura)
+        elif op==6:
+            salir=True
+    return factura,pedido
+
+def mostrar_catalogo(pedido,factura):
+    salir=False
+    while not salir:
+        print("1. Jarros")
+        print("2. Ropa")
+        print("3. Articulos")
+        print("4. Pagar y salir")
+        op=int(input("Opcion: "))
+        if op==1:
+            factura,pedido=mostrar_menu_jarros(pedido,factura)
+        elif op==2:
+            factura,pedido=mostrar_menu_ropa(pedido,factura)
+        elif op==3:
+            factura,pedido=mostrar_menu_articulos(pedido,factura)
+        elif op==4:
+            salir=True
+    return factura,pedido
+
+def imprimir_factura(nombre,cedula,correo,pedido,factura):
+    iva=factura*0.15
+    total=factura+iva
+    print("")
+    print("**************************************")
+    print("            FACTURA")
+    print("**************************************")
+    print("Cliente:",nombre)
+    print("Cedula:",cedula)
+    print("Correo:",correo)
+    print("")
+    print("Pedido:")
+    print(pedido)
+    print("")
+    print("Subtotal:",factura)
+    print("")
+    print("IVA:",iva)
+    print("")
+    print("TOTAL:",total)
+
+nombre,cedula,correo=saludo_y_datos_cliente()
+pedido=""
+factura=0
+factura,pedido=mostrar_catalogo(pedido,factura)
+imprimir_factura(nombre,cedula,correo,pedido,factura)
