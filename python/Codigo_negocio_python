@@ -137,3 +137,8 @@ def imprimir_factura(**datos_opciones):
     print(f"IVA: ${iva}")
     print(f"TOTAL: ${total}")
 
+nombre,cedula,correo=saludo_y_datos_cliente()
+pedido=""
+factura=0
+factura,pedido=mostrar_catalogo(pedido,factura)
+imprimir_factura(nombre=nombre, cedula=cedula, correo=correo, pedido=pedido, factura=factura)
