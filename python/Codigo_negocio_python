@@ -1,8 +1,8 @@
 def saludo_y_datos_cliente():
     print("**************************************")
-    print("          * * CREATIVE * *")
-    print("     BIENVENIDOS A NUESTRA TIENDA")
-    print("   SIEMPRE ES UN GUSTO TENERTE AQUI.")
+    print("           * * CREATIVE * *")
+    print("       BIENVENIDOS A NUESTRA TIENDA")
+    print("     SIEMPRE ES UN GUSTO TENERTE AQUI.")
     print("**************************************")
     print("")
     nombre=input("> Por favor ingrese su nombre: ")
@@ -16,10 +16,13 @@ def saludo_y_datos_cliente():
 def mostrar_catalogo(pedido,factura):
     salir=False
     while not salir:
-        print("1.  > Vasos y Jarros")
-        print("2.  > Ropa")
-        print("3.  > Articulos")
-        print("4.  > Pagar y salir")
+        print("========================================")
+        print("         -- MENU PRINCIPAL --")
+        print("========================================")
+        print("1. > Vasos y Jarros")
+        print("2. > Ropa")
+        print("3. > Articulos")
+        print("4. > Pagar y salir")
         op=int(input("Opcion: "))
         if op==1:
             factura,pedido=mostrar_menu_jarros(pedido,factura)
@@ -34,7 +37,7 @@ def mostrar_catalogo(pedido,factura):
 def agregar_producto_a_factura(nombre_producto,precio,pedido,factura):
     cantidad=int(input(">> Cuantos deseas?: "))
     factura= factura+precio*cantidad
-    pedido= pedido+nombre_producto, " Cantidad: ", cantidad 
+    pedido+= [nombre_producto+" Cantidad: "+str(cantidad)] 
     print("Agregado:", nombre_producto)
     print("")
     return factura,pedido
@@ -42,6 +45,9 @@ def agregar_producto_a_factura(nombre_producto,precio,pedido,factura):
 def mostrar_menu_jarros(pedido,factura):
     salir=False
     while not salir:
+        print("========================================")
+        print("       -- MENU DE JARROS/VASOS --")
+        print("========================================")
         print("1. Ceramica......... $4.50 ")
         print("2. Vidrio......... $6.00 ")
         print("3. Tomatodo......... $8.00")
@@ -66,6 +72,9 @@ def mostrar_menu_jarros(pedido,factura):
 def mostrar_menu_ropa(pedido,factura):
     salir=False
     while not salir:
+        print("========================================")
+        print("           -- MENU DE ROPA --")
+        print("========================================")
         print("1. Camiseta de hombre......... $5.00")
         print("2. Camiseta de mujer......... $5.00")
         print("3. Hoodies......... $7.00")
@@ -91,6 +100,9 @@ def mostrar_menu_ropa(pedido,factura):
 def mostrar_menu_articulos(pedido,factura):
     salir=False
     while not salir:
+        print("========================================")
+        print("        -- MENU DE ACCESORIOS --")
+        print("========================================")
         print("1. Llaveros......... $3.00")
         print("2. Esferos......... $1.00")
         print("3. Libretas/Libretines......... $1.75")
@@ -119,12 +131,10 @@ def imprimir_factura(**datos_opciones):
     correo = datos_opciones["correo"]
     pedido = datos_opciones["pedido"]
     factura = datos_opciones["factura"]
-
     iva = factura * 0.15
     total = factura + iva
-
     print("**************************************")
-    print("            FACTURA")
+    print("            --FACTURA--")
     print("**************************************")
     print("Cliente:", nombre)
     print("Cedula:", cedula)
@@ -138,7 +148,7 @@ def imprimir_factura(**datos_opciones):
     print(f"TOTAL: ${total}")
 
 nombre,cedula,correo=saludo_y_datos_cliente()
-pedido=""
+pedido=[]
 factura=0
 factura,pedido=mostrar_catalogo(pedido,factura)
 imprimir_factura(nombre=nombre, cedula=cedula, correo=correo, pedido=pedido, factura=factura)
