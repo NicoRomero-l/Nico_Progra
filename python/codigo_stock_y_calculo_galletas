@@ -1,0 +1,43 @@
+main.py 
+
+
+def galletas_llevadas():
+    return int(input("Ingrese cuántas galletas se va a llevar: "))
+
+def stock_galletas(cantidad):
+    galletas = 10
+    return galletas - cantidad
+
+def precio_unitario():
+    return "Galletas", 2.50
+
+def total_a_pagar(cantidad):
+    return cantidad * 2.50
+
+def descuento(total):
+    return total * 0.20
+
+
+
+negocio_venta_galletas.py
+
+
+import main
+
+cantidad = main.galletas_llevadas()
+producto, precio = main.precio_unitario()
+stock_restante = main.stock_galletas(cantidad)
+total = main.total_a_pagar(cantidad)
+descuento = main.descuento(total)
+total_final = total - descuento
+
+if stock_restante < 0:
+    print("No hay suficientes galletas.")
+else:
+    print(f"Producto: {producto}")
+    print(f"Cantidad: {cantidad}")
+    print(f"Precio unitario: ${precio}")
+    print(f"Descuento (20%): ${descuento}")
+    print(f"Total a pagar: ${total_final}")
+    print(f"Stock restante: {stock_restante}")
+    
