@@ -1,3 +1,7 @@
+import tkinter as tk
+from tkinter import messagebox 
+
+
 def saludar():
     messagebox.showinfo("Hola", "Bienvenido a Romeraus")
 
