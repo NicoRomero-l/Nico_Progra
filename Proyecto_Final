@@ -1,1 +1,19 @@
+def saludar():
+    messagebox.showinfo("Hola", "Bienvenido a Romeraus")
 
+grafica = tk.Tk()
+grafica.title("PIZZERIA")
+grafica.geometry("900x500")
+
+texto_bienvenida=tk.Label(grafica, text="Gestion de Pizzeria",
+                          font=("Arial", 16, "bold")
+                          )
+texto_bienvenida.pack(pady=20)
+
+boton_entrada=tk.Button(grafica, 
+                       text="Comenzar",
+                       command = saludar
+                       )
+boton_entrada.pack(pady=10)
+
+grafica.mainloop()
