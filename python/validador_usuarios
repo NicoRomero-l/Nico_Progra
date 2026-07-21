@@ -1,0 +1,35 @@
+#py
+
+import json
+import tkinter as tk
+from tkinter import messagebox
+
+ventana = tk.Tk()
+ventana.geometry("300x250")
+
+ventana2 = tk.Toplevel()
+ventana2.geometry("300x250")
+ventana2.withdraw()
+
+# Función simplificada: Carga el JSON directamente en la validación
+def verificar():
+    usrs = json.load(open("usuarios.json"))
+    
+    if usrs.get(e1.get()) == e2.get(): ventana.withdraw(), ventana2.deiconify()
+    else: messagebox.showerror("Error", "Datos incorrectos")
+
+tk.Label(ventana, text="Usuario").pack(); e1 = tk.Entry(ventana); e1.pack()
+tk.Label(ventana, text="Contraseña").pack(); e2 = tk.Entry(ventana, show="*"); e2.pack()
+tk.Button(ventana, text="Entrar", command=verificar).pack(pady=10)
+
+tk.Label(ventana2, text="¡Bienvenido!").pack(pady=40)
+tk.Button(ventana2, text="Salir", command=lambda: (ventana2.withdraw(), ventana.deiconify())).pack()
+
+ventana.mainloop()
+
+#json
+
+{
+    "admin": "1234",
+    "nico": "clave123"
+}
